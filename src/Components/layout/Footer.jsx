@@ -20,8 +20,7 @@ const Footer = () => {
         </div>
 
         <h1 className="text-sm sm:text-xl -tracking-wider text-center font-normal font-poppins text-white/50">
-          © BrandBreth 2026 |{" "}
-          <span className="text-white font-medium cursor-pointer">Privacy Policy</span>
+          © BrandBreth 2026 <span className="text-white opacity-100">| Developed by Amit Vishwakarma</span>
         </h1>
       </section>
     </>

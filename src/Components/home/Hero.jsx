@@ -8,7 +8,6 @@ const Hero = () => {
   const roundedElem = useRef(null);
 
   useGSAP(() => {
-    // Parallax effect for the background circle
     gsap.to(roundedElem.current, {
       height: "0%",
       top: "0%",
@@ -21,7 +20,6 @@ const Hero = () => {
       },
     });
 
-    // Content text reveal animation
     if (textRevealConatainer.current && textRevealConatainer.current.children[1]) {
       const targets = [
         textRevealConatainer.current.children[1].children[0],

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -15,9 +14,9 @@ import WorkShowcase from "./Components/home/WorkShowcase";
 import Pricing from "./Components/home/Pricing";
 import Footer from "./Components/layout/Footer";
 
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 function App() {
-  gsap.registerPlugin(useGSAP);
-  gsap.registerPlugin(ScrollTrigger);
   return (
     <>
       <header className="overflow-x-hidden w-full">
@@ -25,9 +24,8 @@ function App() {
         <Preloader />
         <Intro />
       </header>
-      <main >
-          <Hero />
-      
+      <main>
+        <Hero />
         <BrandMarquee />
         <Benefits />
         <Summary />
@@ -41,3 +39,4 @@ function App() {
 }
 
 export default App;
+

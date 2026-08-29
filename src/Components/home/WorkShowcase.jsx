@@ -18,7 +18,6 @@ const WorkShowcase = () => {
           start: "top top",
           end: "420% top",
           scrub: true,
-          // markers:true,
           pin: true,
         },
       });
@@ -41,7 +40,7 @@ const WorkShowcase = () => {
         revealText1.current,
         {
           left: "0%",
-          translateX: "-10%", // Fixed typo: -50& -> -50%
+          translateX: "-10%",
           duration: 5,
         },
         "a"
@@ -58,7 +57,6 @@ const WorkShowcase = () => {
       );
 
       tl.to(scrollImgSection.current.querySelector("img:nth-child(1)"), {
-        // Note: keeping selector for children for now as they are dynamic, but scoping to ref
         marginTop: "-440vh",
         duration: 5,
       });
