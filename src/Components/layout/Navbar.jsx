@@ -1,21 +1,18 @@
 const Navbar = () => {
   return (
-    // Add a specific background color to the nav (e.g., bg-black)
-    <nav className="w-full h-16 flex fixed z-500 justify-between items-end px-14 mix-blend-difference ">
+    <nav className="w-full h-16 flex fixed z-[500] justify-between items-center px-4 sm:px-8 md:px-14 mix-blend-difference">
       {/* Logo Section */}
-      <h1 className="text-3xl group cursor-pointer flex flex-col overflow-hidden h-10 -tracking-widest relative">
-        {/* Added mix-blend-difference to both spans for consistency */}
+      <h1 className="text-2xl sm:text-3xl group cursor-pointer flex flex-col overflow-hidden h-9 sm:h-10 -tracking-widest relative">
         <span className="p-1 font-medium text-white transition-transform duration-200 transform translate-y-0 group-hover:-translate-y-full mix-blend-difference">
-          Brandbeet
+          BrandBreth
         </span>
         <span className="p-1 text-white transition-transform duration-200 transform translate-y-0 group-hover:-translate-y-full mix-blend-difference">
-          Brandbeet
+          BrandBreth
         </span>
       </h1>
 
       {/* Email Section */}
-      <p className="text-xl group cursor-pointer flex justify-start flex-col tracking-tighter overflow-hidden h-7 relative">
-        {/* Adjusted translate values to use 'full' or specific height to match container height (h-7) */}
+      <p className="text-sm sm:text-xl group cursor-pointer flex justify-start flex-col tracking-tighter overflow-hidden h-6 sm:h-7 relative">
         <span className="text-white transition-transform duration-200 transform translate-y-0 group-hover:-translate-y-full mix-blend-difference">
           hello@BrandBreth.com
         </span>

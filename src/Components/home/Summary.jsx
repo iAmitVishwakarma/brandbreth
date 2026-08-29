@@ -30,18 +30,18 @@ const Summary = () => {
 
   return (
     <>
-      <section className="bg-white relative   w-full">
-        <h1 className="summaryText absolute -top-1 text-9xl w-full  text-black/50 text-center  font-poppins -tracking-wider">
+      <section className="bg-white relative w-full">
+        <h1 className="summaryText absolute -top-1 text-4xl sm:text-7xl md:text-9xl w-full text-black/50 text-center font-poppins -tracking-wider">
           in summary...
         </h1>
 
         <section
           key={2}
-          className="w-full  py-40 flex flex-col  justify-center items-center "
+          className="w-full py-20 sm:py-32 md:py-40 flex flex-col justify-center items-center"
         >
           <div
             ref={textRevealConatainer2}
-            className="text-[7vw] px-10  text-wrapper relative overflow-hidden "
+            className="text-[8vw] sm:text-[7vw] px-4 sm:px-8 md:px-10 text-wrapper relative overflow-hidden"
           >
             <h1 className=" tracking-tighter  font-normal font-poppins opacity-15 text-black mb-6 ">
               A dedicated team at <br />

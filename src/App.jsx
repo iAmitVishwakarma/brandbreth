@@ -3,17 +3,17 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-import Preloader from "./components/layout/Preloader";
-import Navbar from "./components/layout/Navbar";
-import Intro from "./components/home/Intro";
-import Hero from "./components/home/Hero";
-import BrandMarquee from "./components/home/BrandMarquee";
-import Benefits from "./components/home/Benefits";
-import Summary from "./components/home/Summary";
-import Services from "./components/home/Services";
-import WorkShowcase from "./components/home/WorkShowcase";
-import Pricing from "./components/home/Pricing";
-import Footer from "./components/layout/Footer";
+import Preloader from "./Components/layout/Preloader";
+import Navbar from "./Components/layout/Navbar";
+import Intro from "./Components/home/Intro";
+import Hero from "./Components/home/Hero";
+import BrandMarquee from "./Components/home/BrandMarquee";
+import Benefits from "./Components/home/Benefits";
+import Summary from "./Components/home/Summary";
+import Services from "./Components/home/Services";
+import WorkShowcase from "./Components/home/WorkShowcase";
+import Pricing from "./Components/home/Pricing";
+import Footer from "./Components/layout/Footer";
 
 function App() {
   gsap.registerPlugin(useGSAP);

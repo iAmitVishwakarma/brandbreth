@@ -69,28 +69,28 @@ const WorkShowcase = () => {
   return (
     <section
       ref={scrollContainer}
-      className="w-full relative h-screen overflow-hidden  bg-black z-10"
+      className="w-full relative h-screen overflow-hidden bg-black z-10"
     >
       <button
         ref={buttonRef}
-        className="bg-gray-200  absolute -bottom-50 left-1/2 -translate-x-1/2 text-black px-13 py-5 text-xl tracking-tighter rounded-full"
+        className="bg-gray-200 absolute -bottom-50 left-1/2 -translate-x-1/2 text-black px-6 sm:px-10 md:px-13 py-3 sm:py-4 md:py-5 text-base sm:text-xl tracking-tighter rounded-full whitespace-nowrap z-20 hover:bg-white transition-colors"
       >
         book a demo
       </button>
 
       <div
         ref={openCloseElem}
-        className=" relative w-2/3 h-0 left-1/2 top-1/2 -translate-1/2 z-10 text-white"
+        className="relative w-11/12 md:w-2/3 h-0 left-1/2 top-1/2 -translate-1/2 z-10 text-white"
       >
         <h1
           ref={revealText1}
-          className=" text-9xl absolute -top-17 right-1/2 pr-3 capitalize -tracking-widest   "
+          className="text-5xl sm:text-7xl md:text-9xl absolute -top-10 sm:-top-17 right-1/2 pr-3 capitalize -tracking-widest"
         >
           our
         </h1>
         <h1
           ref={revealText2}
-          className="text-9xl absolute -bottom-15   left-1/2 pl-3  capitalize -tracking-widest "
+          className="text-5xl sm:text-7xl md:text-9xl absolute -bottom-10 sm:-bottom-15 left-1/2 pl-3 capitalize -tracking-widest"
         >
           Work
         </h1>

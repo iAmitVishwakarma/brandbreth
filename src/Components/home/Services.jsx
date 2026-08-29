@@ -1,10 +1,32 @@
-import React, { use, useRef } from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
+const servicesData = [
+  {
+    title: "Brand",
+    timeline: "1-2 months average / 8 design sprints",
+    items: ["Logo design", "Visual Identity", "Collateral", "Brand Guidelines", "Animation", "Naming"],
+  },
+  {
+    title: "Product",
+    timeline: "2-3 months average / 12 design sprints",
+    items: ["UX / UI Design", "Design Systems", "Prototyping", "User Research", "Mobile Apps", "Web Apps"],
+  },
+  {
+    title: "Website",
+    timeline: "1 month average / 4 design sprints",
+    items: ["Landing Pages", "Webflow Development", "Framer Sites", "E-Commerce", "SEO Optimization", "Responsive Web"],
+  },
+  {
+    title: "Motion",
+    timeline: "2-4 weeks average / 4 design sprints",
+    items: ["3D Motion", "Micro-Interactions", "Logo Animations", "Product Demos", "Social Ads", "Video Edit"],
+  },
+];
+
 const Services = () => {
   const scrollContainer4 = useRef(null);
-
   const textRevealConatainer4 = useRef(null);
 
   useGSAP(
@@ -15,15 +37,12 @@ const Services = () => {
           start: "top 70%",
           end: "20% 50%",
           scrub: 1,
-          // pin: true,
-          // markers: true,
         },
       });
 
       tl4.to(".rounded-div-span", {
         height: "0%",
         duration: 5,
-        // ease: "power2.out",
         top: "0%",
       });
     },
@@ -38,8 +57,6 @@ const Services = () => {
           start: "top 70%",
           end: "bottom 50%",
           scrub: 1,
-          // pin: true,
-          // markers: true,
         },
       });
 
@@ -57,84 +74,72 @@ const Services = () => {
     <>
       <section
         ref={scrollContainer4}
-        className="bg-gray-100 w-full pt-40 relative  h-1/2"
+        className="bg-gray-100 w-full pt-20 sm:pt-32 md:pt-40 relative h-1/2"
       >
-        <span className=" rounded-div-span bg-white rounded-[50%] h-70 w-full absolute -top-35 "></span>
+        <span className="rounded-div-span bg-white rounded-[50%] h-40 sm:h-60 md:h-70 w-full absolute -top-20 sm:-top-30 md:-top-35"></span>
 
         <div
           ref={textRevealConatainer4}
-          className="text-[7vw] px-10  text-wrapper relative overflow-hidden "
+          className="text-[8vw] sm:text-[7vw] px-4 sm:px-8 md:px-10 text-wrapper relative overflow-hidden"
         >
-          <h1 className=" tracking-tighter  font-normal font-poppins opacity-15 text-black mb-6 ">
+          <h1 className="tracking-tighter font-normal font-poppins opacity-15 text-black mb-6">
             Design services for <br />
-            <span className=" "> profitable outcomes</span>
+            <span> profitable outcomes</span>
           </h1>
 
-          <h1 className=" textreveal absolute pb-10  w-full top-0  h-full   tracking-tighter font-normal font-poppins text-black mb-6 ">
-            <span className=" w-0 h-1/2 overflow-hidden text-nowrap inline-flex  ">
+          <h1 className="textreveal absolute pb-10 w-full top-0 h-full tracking-tighter font-normal font-poppins text-black mb-6">
+            <span className="w-0 h-1/2 overflow-hidden text-nowrap inline-flex">
               Design services for
             </span>{" "}
             <br />
-            <span className=" w-0      overflow-hidden text-nowrap   inline-flex  ">
+            <span className="w-0 overflow-hidden text-nowrap inline-flex">
               profitable outcomes
             </span>
           </h1>
         </div>
       </section>
 
-      <ServicesList />
-      <ServicesList />
-      <ServicesList />
-      <ServicesList />
+      {servicesData.map((s, idx) => (
+        <ServicesList key={idx} {...s} />
+      ))}
     </>
   );
 };
 
-const ServicesList = () => {
+const ServicesList = ({ title, timeline, items }) => {
   return (
-    <>
-      <section className="w-full p-10 bg-gray-100 ">
-        <hr />
-        <div className=" grid-cols-2 py-20 px-5 w-full grid items-center ">
-          <h1 className="text-8xl ">Brand</h1>
-          <div>
-            <button className="bg-gray-200  text-black px-12 py-6 text-xl tracking-tighter rounded-full">
-              View Pricing
-            </button>
-          </div>
+    <section className="w-full px-4 sm:px-8 md:px-10 py-6 bg-gray-100">
+      <hr className="border-gray-300" />
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center py-10 sm:py-16 md:py-20 w-full gap-4">
+        <h1 className="text-4xl sm:text-6xl md:text-8xl font-poppins tracking-tighter text-black">
+          {title}
+        </h1>
+        <div>
+          <button className="bg-gray-200 text-black px-6 sm:px-10 md:px-12 py-3 sm:py-5 md:py-6 text-base sm:text-xl tracking-tighter rounded-full hover:bg-gray-300 transition-colors">
+            View Pricing
+          </button>
         </div>
-        <hr />
+      </div>
+      <hr className="border-gray-300" />
 
-        <div className=" grid grid-cols-2 py-10">
-          <div></div>
-          <div className=" space-y-3 ">
-            <h1 className="text-5xl font-normal tracking-tighter">
-              1-2 months average / 8 design sprints
-            </h1>
-            <br />
-            <p className="text-3xl  opacity-50 font-normal tracking-tighter">
-              Logo design
-            </p>
-            <p className="text-3xl opacity-50 font-normal tracking-tighter">
-              Visual Identity
-            </p>
-            <p className="text-3xl opacity-50 font-normal tracking-tighter">
-              Collateral
-            </p>
-            <p className="text-3xl opacity-50 font-normal tracking-tighter">
-              Brand Guidelines
-            </p>
-            <p className="text-3xl opacity-50 font-normal tracking-tighter">
-              Animation
-            </p>
-            <p className="text-3xl opacity-50 font-normal tracking-tighter">
-              Naming
-            </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 py-8 sm:py-10 gap-6">
+        <div></div>
+        <div className="space-y-3">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-normal tracking-tighter text-black">
+            {timeline}
+          </h2>
+          <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {items.map((item, i) => (
+              <p key={i} className="text-xl sm:text-2xl md:text-3xl opacity-50 font-normal tracking-tighter text-black">
+                {item}
+              </p>
+            ))}
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
+
 
 export default Services;

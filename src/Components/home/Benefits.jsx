@@ -1,22 +1,21 @@
 import { useGSAP } from "@gsap/react";
 import React, { useRef } from "react";
 import gsap from "gsap";
-import { s, section } from "framer-motion/client";
 
 const Benefits = () => {
   const styles = {
     heading: {
-      fontSize: "4rem",
+      fontSize: "clamp(2rem, 4vw, 4rem)",
       fontFamily: "Poppins, sans-serif",
-      letterSpacing: "-0.10em",
+      letterSpacing: "-0.05em",
       fontWeight: "400",
       color: "#000000",
-      marginBottom: "1.5rem",
+      marginBottom: "1rem",
     },
     Paragraph: {
-      fontSize: "2rem",
-      lineHeight: "3rem",
-      letterSpacing: "-0.05em",
+      fontSize: "clamp(1.1rem, 2vw, 2rem)",
+      lineHeight: "1.4",
+      letterSpacing: "-0.03em",
       color: "#333333",
       opacity: "0.7",
       marginBottom: "1.5rem",
@@ -26,8 +25,6 @@ const Benefits = () => {
 
   const scrollsection3Text = useRef(null);
 
-  //  const scrollsection4Text = useRef(null);
-
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -36,7 +33,6 @@ const Benefits = () => {
         end: "210% top",
         scrub: 1,
         pin: true,
-        // markers: true,
       },
     });
 
@@ -47,8 +43,6 @@ const Benefits = () => {
         start: "top top",
         end: "220% 10%",
         scrub: 1,
-        // pin: true,
-        // markers: true,
       },
     });
 
@@ -108,7 +102,6 @@ const Benefits = () => {
       "three"
     );
 
-    //
     tl.to(
       ".textwrapper.three",
       {
@@ -136,7 +129,6 @@ const Benefits = () => {
       "four"
     );
 
-    //
     tl.to(
       ".textwrapper.four",
       {
@@ -163,8 +155,6 @@ const Benefits = () => {
       },
       "five"
     );
-
-    //
 
     tl.to(
       ".textwrapper.five",
@@ -202,7 +192,7 @@ const Benefits = () => {
       "seven"
     );
 
-  tl.to(
+    tl.to(
       ".textwrapper.one",
       {
         marginTop: "-145rem",
@@ -217,42 +207,41 @@ const Benefits = () => {
       {
         marginLeft: "110%",
         duration: 5,
-          ease:"power2.out"
+        ease: "power2.out",
       },
       "seven"
     );
-  
 
     tl.to(
       ".summaryText",
       {
         marginTop: "-10%",
         duration: 5,
-        ease:"bounce.in"
-      
+        ease: "bounce.in",
       },
       "et",
       "-=0.5"
     );
   }, {});
 
+  const starSrc = `${import.meta.env.BASE_URL}Images/star.png`;
+
   return (
-    // <section className="w-full h-screen relative ">
     <section
       ref={scrollsection3Text}
-      className="w-full h-screen flex px-10 overflow-hidden  justify-between  items-center bg-white "
+      className="w-full h-screen flex flex-col md:flex-row px-4 sm:px-8 md:px-10 overflow-hidden justify-between items-center bg-white gap-8"
     >
-      <div className="heading w-3/7 ">
-        <h2 className="text-9xl font-poppins -tracking-widest font-normal  text-black mb-6 ">
+      <div className="heading w-full md:w-3/7">
+        <h2 className="text-4xl sm:text-6xl md:text-9xl font-poppins -tracking-widest font-normal text-black mb-6">
           Expected Outcomes
         </h2>
         <img
-          className="w-30 star h-30 bg-gray-100 rounded-full flex justify-center items-center  p-2"
-          src="/Images/star.png"
+          className="w-20 h-20 md:w-30 md:h-30 star bg-gray-100 rounded-full flex justify-center items-center p-2"
+          src={starSrc}
           alt="Symbol"
         />
       </div>
-      <div className="column-text w-3/7    flex flex-col gap-8 ">
+      <div className="column-text w-full md:w-3/7 flex flex-col gap-8">
         <div className="textwrapper one opacity-0 mt-500">
           <h1 style={styles.heading}>Growth and ROI</h1>
           <p style={styles.Paragraph}>
